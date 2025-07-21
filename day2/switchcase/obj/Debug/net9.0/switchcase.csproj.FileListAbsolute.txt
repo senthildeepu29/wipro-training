@@ -1,0 +1,14 @@
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\bin\Debug\net9.0\switchcase.exe
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\bin\Debug\net9.0\switchcase.deps.json
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\bin\Debug\net9.0\switchcase.runtimeconfig.json
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\bin\Debug\net9.0\switchcase.dll
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\bin\Debug\net9.0\switchcase.pdb
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.AssemblyInfoInputs.cache
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.AssemblyInfo.cs
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.csproj.CoreCompileInputs.cache
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.dll
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\refint\switchcase.dll
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.pdb
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.genruntimeconfig.cache
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\ref\switchcase.dll

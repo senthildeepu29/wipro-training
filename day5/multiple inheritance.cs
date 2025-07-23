@@ -1,46 +1,63 @@
-using school;
-public interface ICurricularActivities
-{
+// using System;
 
+// namespace School
+// {
+//     // Interface 1
+//     public interface ICurricularActivities
+//     {
+//         void Stream();
+//     }
 
-    void Stream();
-}
+//     // Interface 2
+//     public interface INonCurricularActivities
+//     {
+//         void Activities();
+//     }
 
-public interface INonCurricularActivities
-{
+//     // Base class
+//     public class Person
+//     {
+//         public string Name { get; set; }
 
-    void Activities();
-}
+//         public void Display()
+//         {
+//             Console.WriteLine("Student Name: " + Name);
+//         }
+//     }
 
-public class Student : Person, ICurricularActivities, INonCurricularActivities
-{
+//     // Student class implementing both interfaces
+//     public class Student : Person, ICurricularActivities, INonCurricularActivities
+//     {
+//         public int RollNumber { get; set; }
 
-    public int RollNumber { get; set; }
-    public void Study()
-    {
+//         public void Study()
+//         {
+//             Console.WriteLine("Studying hard...");
+//         }
 
-    }
-    public void Stream()
-    {
-        Console.WriteLine("Taken Science Stream");
-    }
+//         public void Stream()
+//         {
+//             Console.WriteLine("Taken Science Stream");
+//         }
 
-    public void Activities()
-    {
-        Console.WriteLine("Sports - BasketBall");
-    }
+//         public void Activities()
+//         {
+//             Console.WriteLine("Sports - BasketBall");
+//         }
 
+//         // Entry point
+//         public static void Main()
+//         {
+//             Student s = new Student();
 
-    static void Main()
-    {
+//             Console.WriteLine("Enter the name of student:");
+//             string sname = Console.ReadLine();
+//             s.Name = sname;
 
-        Student s = new Student();
-        Console.WriteLine("Enter the name of student");
-        string sname = Console.ReadLine();
-        s.Name = sname;
-        s.Study();
-        s.Display();
-        s.Stream();
-        s.Activities(); 
-    }
-}
+//             s.Study();
+//             s.Display();
+//             s.Stream();
+//             s.Activities();
+//         }
+//     }
+// }

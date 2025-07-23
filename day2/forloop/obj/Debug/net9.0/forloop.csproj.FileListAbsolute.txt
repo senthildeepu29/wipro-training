@@ -12,3 +12,4 @@ C:\Users\Deepika\Desktop\wipro training\day2\forloop\obj\Debug\net9.0\refint\for
 C:\Users\Deepika\Desktop\wipro training\day2\forloop\obj\Debug\net9.0\forloop.pdb
 C:\Users\Deepika\Desktop\wipro training\day2\forloop\obj\Debug\net9.0\forloop.genruntimeconfig.cache
 C:\Users\Deepika\Desktop\wipro training\day2\forloop\obj\Debug\net9.0\ref\forloop.dll
+C:\Users\Deepika\Desktop\wipro training\day2\forloop\obj\Debug\net9.0\forloop.sourcelink.json

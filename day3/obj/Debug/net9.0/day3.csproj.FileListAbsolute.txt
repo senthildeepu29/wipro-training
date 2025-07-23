@@ -12,3 +12,4 @@ C:\Users\Deepika\Desktop\wipro training\day3\obj\Debug\net9.0\refint\day3.dll
 C:\Users\Deepika\Desktop\wipro training\day3\obj\Debug\net9.0\day3.pdb
 C:\Users\Deepika\Desktop\wipro training\day3\obj\Debug\net9.0\day3.genruntimeconfig.cache
 C:\Users\Deepika\Desktop\wipro training\day3\obj\Debug\net9.0\ref\day3.dll
+C:\Users\Deepika\Desktop\wipro training\day3\obj\Debug\net9.0\day3.sourcelink.json

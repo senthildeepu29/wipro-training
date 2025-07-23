@@ -12,3 +12,4 @@ C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\refint\
 C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.pdb
 C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.genruntimeconfig.cache
 C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\ref\switchcase.dll
+C:\Users\Deepika\Desktop\wipro training\day2\switchcase\obj\Debug\net9.0\switchcase.sourcelink.json

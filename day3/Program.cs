@@ -18,6 +18,7 @@ namespace ArrayExample
             }
 
             Console.ReadKey(); // Wait for a key press before closing
+
         }
     }
 }

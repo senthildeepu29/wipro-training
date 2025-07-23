@@ -12,3 +12,4 @@ C:\Users\Deepika\Desktop\wipro training\first program\obj\Debug\net9.0\refint\fi
 C:\Users\Deepika\Desktop\wipro training\first program\obj\Debug\net9.0\first program.pdb
 C:\Users\Deepika\Desktop\wipro training\first program\obj\Debug\net9.0\first program.genruntimeconfig.cache
 C:\Users\Deepika\Desktop\wipro training\first program\obj\Debug\net9.0\ref\first program.dll
+C:\Users\Deepika\Desktop\wipro training\first program\obj\Debug\net9.0\first program.sourcelink.json

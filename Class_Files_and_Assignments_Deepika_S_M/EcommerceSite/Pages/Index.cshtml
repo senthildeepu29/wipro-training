@@ -1,0 +1,22 @@
+﻿@page
+@model EcommerceSite.Pages.IndexModel
+@using EcommerceSite.Models
+@{
+    var username = HttpContext.Session.GetString("Username") ?? "Guest";
+}
+
+<h2>Welcome, @username</h2>
+
+<div>
+    @foreach (var product in Model.Products)
+    {
+        <div style="margin-bottom: 20px;">
+            <img src="@product.ImageUrl" width="100" />
+            <p>@product.Name - $@product.Price</p>
+            <form method="post" asp-page-handler="AddToCart">
+                <input type="hidden" name="productId" value="@product.Id" />
+                <button type="submit">Buy</button>
+            </form>
+        </div>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@page
+@model RazorProductApp.Pages.ProductPageModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Add Product</h2>
+
+<form method="post">
+    <input asp-for="NewProduct.Name" placeholder="Product Name" />
+    <textarea asp-for="NewProduct.Description" placeholder="Description"></textarea>
+    
+    <h4>Categories</h4>
+    @for (int i = 0; i < 3; i++)
+    {
+        <input name="NewProduct.Categories[@i].Name" placeholder="Category Name" />
+    }
+
+    <button type="submit">Add Product</button>
+</form>
+
+<h2>Product List</h2>
+@foreach (var product in Model.ProductList)
+{
+    @await Html.PartialAsync("Shared/Partials/_ProductSummary", product)
+}

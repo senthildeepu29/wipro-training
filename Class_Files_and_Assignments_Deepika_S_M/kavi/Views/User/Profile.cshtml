@@ -1,0 +1,15 @@
+@{
+    ViewBag.Title = "User Profile";
+}
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+<h2>Your Profile</h2>
+
+@if (ViewBag.ProtectedMessage != null)
+{
+    <div class="alert alert-info">Protected token: @ViewBag.ProtectedMessage</div>
+}
+
+<p>Simple profile: add forms here to view/edit profile data.</p>

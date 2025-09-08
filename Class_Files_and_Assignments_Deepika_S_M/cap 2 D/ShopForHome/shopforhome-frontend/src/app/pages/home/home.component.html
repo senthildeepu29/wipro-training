@@ -1,0 +1,8 @@
+<div class="home">
+  <h2>Welcome to Shop For Home</h2>
+  <div *ngFor="let p of products">
+    <h3>{{ p.name }}</h3>
+    <p>{{ p.description }}</p>
+    <p><b>₹{{ p.price }}</b></p>
+  </div>
+</div>

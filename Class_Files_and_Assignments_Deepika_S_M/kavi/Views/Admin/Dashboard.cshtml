@@ -1,0 +1,10 @@
+@{
+    ViewBag.Title = "Admin Dashboard";
+}
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+<h2>Admin Dashboard</h2>
+<p>Put admin user-management UI here (list users, assign roles, audit logs).</p>
+

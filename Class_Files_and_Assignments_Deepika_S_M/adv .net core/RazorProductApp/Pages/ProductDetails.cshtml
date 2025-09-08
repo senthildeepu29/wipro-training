@@ -1,0 +1,9 @@
+﻿@page "/Products/{id:int}"
+@model RazorProductApp.Pages.ProductDetailsModel?
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Product Details</h2>
+
+<p><strong>Product ID:</strong> @Model.ProductID</p>
+
+<!-- Add more fields like Name, Description, Categories etc. -->

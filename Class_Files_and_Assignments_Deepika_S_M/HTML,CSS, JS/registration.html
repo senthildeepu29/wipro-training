@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+
+  <form action="#" method="post" onsubmit="return false;">
+    <label for="id">ID:</label><br />
+    <input type="text" id="id" name="id" required pattern="\d+" title="ID should be numeric" /><br /><br />
+
+    <label for="fname">First Name:</label><br />
+    <input type="text" id="fname" name="fname" required /><br /><br />
+
+    <label for="lname">Last Name:</label><br />
+    <input type="text" id="lname" name="lname" required /><br /><br />
+
+    <label for="city">City:</label><br />
+    <input type="text" id="city" name="city" required /><br /><br />
+
+    <label for="password">Password:</label><br />
+    <input type="password" id="password" name="password" required minlength="6" /><br /><br />
+
+    <label for="address">Address:</label><br />
+    <textarea id="address" name="address" required></textarea><br /><br />
+
+    <input type="submit" value="Submit" />
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+@* @{
+    ViewData["Title"] = "Logout";
+    var username = Context.Session.GetString("username");
+}
+
+<h2>Welcome, @username!</h2>
+
+<form method="post" action="/Account/LogoutConfirmed">
+    <button type="submit">Logout</button>
+</form> *@

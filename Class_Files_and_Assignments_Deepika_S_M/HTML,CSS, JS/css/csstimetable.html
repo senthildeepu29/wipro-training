@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spring Flowers School - TimeTable</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      padding-top: 70px;
+    }
+    .timetable-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .day-card {
+      flex: 1 1 180px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #ddd;
+      padding: 15px;
+    }
+    .day-card h5 {
+      color: #0d6efd;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    @media (max-width: 576px) {
+      .day-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Spring Flowers School</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="timetable.html" class="btn btn-primary active">TimeTable</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2 class="text-center">Weekly Time Table</h2>
+    <div class="timetable-container">
+      <div class="day-card">
+        <h5>Monday</h5>
+        <ul>
+          <li>9:00 - 10:00 Math</li>
+          <li>10:15 - 11:15 English</li>
+          <li>11:30 - 12:30 Physics</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <h5>Tuesday</h5>
+        <ul>
+          <li>9:00 - 10:00 Chemistry</li>
+          <li>10:15 - 11:15 History</li>
+          <li>11:30 - 12:30 Computer Science</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <h5>Wednesday</h5>
+        <ul>
+          <li>9:00 - 10:00 Geography</li>
+          <li>10:15 - 11:15 Math</li>
+          <li>11:30 - 12:30 Biology</li>
+        </ul>
+      </div>
+      <!-- Add more days as needed -->
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

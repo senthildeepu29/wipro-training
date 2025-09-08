@@ -1,0 +1,10 @@
+@model BookstoreApp.Models.Book
+
+<h2>Create Book</h2>
+<form asp-action="Create">
+    <input asp-for="Title" placeholder="Title" /><br/>
+    <input asp-for="Author" placeholder="Author" /><br/>
+    <input asp-for="Genre" placeholder="Genre" /><br/>
+    <input asp-for="Price" placeholder="Price" /><br/>
+    <button type="submit">Add</button>
+</form>

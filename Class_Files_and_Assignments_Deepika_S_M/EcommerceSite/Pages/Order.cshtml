@@ -1,0 +1,14 @@
+@page
+@model OrderModel
+@using EcommerceSite.Models
+
+<h2>Order Summary</h2>
+
+<ul>
+@foreach (var item in Model.Cart)
+{
+    <li>@item.Product.Name x @item.Quantity = $@(item.Product.Price * item.Quantity)</li>
+}
+</ul>
+
+<a href="/Billing">Proceed to Billing</a>

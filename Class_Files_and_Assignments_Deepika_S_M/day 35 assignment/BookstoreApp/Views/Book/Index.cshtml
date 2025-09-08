@@ -1,0 +1,19 @@
+@model IEnumerable<BookstoreApp.Models.Book>
+
+<h2>Books</h2>
+<a asp-action="Create">Add New Book</a>
+<table>
+    <tr><th>Title</th><th>Author</th><th>Genre</th><th>Price</th><th></th></tr>
+    @foreach(var b in Model) {
+        <tr>
+            <td>@b.Title</td>
+            <td>@b.Author</td>
+            <td>@b.Genre</td>
+            <td>@b.Price</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@b.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@b.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

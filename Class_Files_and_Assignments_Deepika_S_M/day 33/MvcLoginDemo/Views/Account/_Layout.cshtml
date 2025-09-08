@@ -1,0 +1,15 @@
+@* <!-- ... -->
+<nav>
+  @if (User.Identity.IsAuthenticated)
+  {
+    <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+      @Html.AntiForgeryToken()
+      <button type="submit">Logout</button>
+    </form>
+  }
+  else
+  {
+    <a asp-controller="Account" asp-action="Login">Login</a>
+  }
+</nav>
+<!-- ... --> *@

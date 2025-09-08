@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Random User Fetch</title>
+</head>
+<body>
+  <h1>Random User Generator</h1>
+  <button id="fetchBtn">Get Random User</button>
+
+  <div id="userInfo" style="margin-top: 20px;">
+    <!-- User info will appear here -->
+  </div>
+
+  <script>
+    const button = document.getElementById('fetchBtn');
+    const userInfo = document.getElementById('userInfo');
+
+    button.addEventListener('click', async () => {
+      userInfo.innerHTML = 'Loading...';
+      try {
+        const response = await fetch('https://randomuser.me/api/');
+        const data = await response.json();
+        const user = data.results[0];
+
+        userInfo.innerHTML = `
+          <img src="${user.picture.large}" alt="User Picture" />
+          <h2>${user.name.title} ${user.name.first} ${user.name.last}</h2>
+          <p>Email: ${user.email}</p>
+        `;
+      } catch (error) {
+        userInfo.innerHTML = 'Failed to fetch user.';
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>

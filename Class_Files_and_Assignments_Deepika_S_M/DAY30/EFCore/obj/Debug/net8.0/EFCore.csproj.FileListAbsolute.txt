@@ -1,0 +1,10 @@
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.csproj.AssemblyReference.cache
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.AssemblyInfoInputs.cache
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.AssemblyInfo.cs
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.csproj.CoreCompileInputs.cache
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.RazorAssemblyInfo.cache
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.RazorAssemblyInfo.cs
+C:\Users\Deepika\Desktop\wipro training\DAY30\EFCore\obj\Debug\net8.0\EFCore.sourcelink.json

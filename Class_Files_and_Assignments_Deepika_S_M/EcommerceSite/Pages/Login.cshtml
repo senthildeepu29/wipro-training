@@ -1,0 +1,18 @@
+@page
+@model EcommerceSite.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<form method="post">
+    <p>Username: <input type="text" asp-for="Username" /></p>
+    <p>Password: <input type="password" asp-for="Password" /></p>
+    <button type="submit">Login</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <p style="color:red">@Model.ErrorMessage</p>
+}

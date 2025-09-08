@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShopForHome", "ShopForHome", "{0AF3F569-9BB6-60C2-FD90-ABA31E8C2DB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopForHomeApi", "ShopForHome\ShopForHomeApi\ShopForHomeApi.csproj", "{B0D4EFFA-B087-A350-528A-F3CBA1F8ADDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0D4EFFA-B087-A350-528A-F3CBA1F8ADDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D4EFFA-B087-A350-528A-F3CBA1F8ADDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D4EFFA-B087-A350-528A-F3CBA1F8ADDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D4EFFA-B087-A350-528A-F3CBA1F8ADDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0D4EFFA-B087-A350-528A-F3CBA1F8ADDC} = {0AF3F569-9BB6-60C2-FD90-ABA31E8C2DB7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BCBED11-5575-4E1B-ABD0-A958A26FF320}
+	EndGlobalSection
+EndGlobal

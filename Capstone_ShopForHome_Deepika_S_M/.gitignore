@@ -1,0 +1,7 @@
+# Ignore Angular cache files
+**/.angular/cache/
+
+# Other common ignores
+node_modules/
+dist/
+.env

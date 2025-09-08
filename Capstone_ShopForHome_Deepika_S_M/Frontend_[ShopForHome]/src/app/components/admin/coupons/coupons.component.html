@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2 class="mb-3">🎟️ Manage Coupons</h2>
+
+  <!-- Add Coupon Form -->
+  <div class="d-flex mb-3">
+    <input [(ngModel)]="code" placeholder="Coupon Code" class="form-control me-2" />
+    <input [(ngModel)]="discount" type="number" placeholder="Discount %" class="form-control me-2" />
+    <button class="btn btn-success" (click)="addCoupon()">Add Coupon</button>
+  </div>
+
+  <!-- Coupon List -->
+  <table class="table table-bordered shadow-sm">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Code</th>
+        <th>Discount %</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let coupon of coupons">
+        <td>{{ coupon.id }}</td>
+        <td>{{ coupon.code }}</td>
+        <td>{{ coupon.discount }}%</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteCoupon(coupon.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,76 @@
+<!-- 🔹 Filters Section -->
+<div class="filters mb-3 d-flex gap-3 align-items-center">
+  <!-- Category Filter -->
+  <select class="form-select w-auto" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+    <option value="">All Categories</option>
+    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+  </select>
+
+  <!-- Price Filter -->
+  <input
+    type="number"
+    class="form-control w-auto"
+    [(ngModel)]="maxPrice"
+    (input)="applyFilters()"
+    placeholder="Max Price"
+  />
+
+  <!-- Rating Filter -->
+  <input
+    type="number"
+    class="form-control w-auto"
+    [(ngModel)]="minRating"
+    (input)="applyFilters()"
+    min="1"
+    max="5"
+    placeholder="Min Rating"
+  />
+</div>
+
+<!-- 🔹 Products Grid -->
+<div class="row">
+  <div class="col-md-4" *ngFor="let product of filteredProducts">
+    <div class="card mb-3 shadow-sm">
+      <img
+        [src]="product.imageUrl"
+        class="card-img-top"
+        alt="{{ product.name }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">₹ {{ product.price }}</p>
+        <p class="card-text">⭐ {{ product.rating }}</p>
+
+        <!-- Quantity controls -->
+        <div class="d-flex align-items-center mb-2">
+          <button
+            class="btn btn-outline-secondary btn-sm"
+            (click)="decrease(product)"
+          >
+            -
+          </button>
+          <span class="mx-2">{{ product.quantity }}</span>
+          <button
+            class="btn btn-outline-secondary btn-sm"
+            (click)="increase(product)"
+          >
+            +
+          </button>
+        </div>
+
+        <!-- Buttons Row -->
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-primary" (click)="addToCart(product)">
+            Add to Cart
+          </button>
+          <button
+            class="btn btn-outline-danger"
+            (click)="addToWishlist(product)"
+          >
+            ❤️
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

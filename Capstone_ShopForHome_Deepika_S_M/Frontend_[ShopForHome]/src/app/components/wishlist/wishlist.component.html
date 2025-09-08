@@ -1,0 +1,40 @@
+<!-- <div class="container mt-4">
+  <h2>My Wishlist ❤️</h2>
+
+  <div *ngIf="wishlist.length === 0">
+    <p>No items in wishlist</p>
+  </div>
+
+  <div *ngFor="let item of wishlist" class="card mb-3 p-3">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h5>{{ item.name }}</h5>
+        <p>₹{{ item.price }}</p>
+      </div>
+      <div>
+        <button class="btn btn-danger btn-sm" (click)="removeItem(item.id)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="row" *ngIf="wishlist.length > 0; else emptyWishlist">
+  <div class="col-md-4" *ngFor="let product of wishlist">
+    <div class="card mb-3 shadow-sm">
+      <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">₹ {{ product.price }}</p>
+
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-success" (click)="addToCart(product)">Add to Cart</button>
+          <button class="btn btn-danger" (click)="remove(product.id)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyWishlist>
+  <p class="text-center mt-5">💔 Your wishlist is empty.</p>
+</ng-template>

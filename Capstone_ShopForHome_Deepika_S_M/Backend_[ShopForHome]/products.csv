@@ -1,0 +1,6 @@
+Id,Name,Price,Category,Stock,Rating,ImageUrl
+1,Wooden Chair,1999.99,Furniture,10,4.5,https://example.com/images/chair.jpg
+2,Office Desk,4999.50,Furniture,5,4.2,https://example.com/images/desk.jpg
+3,Running Shoes,2999.00,Sports,20,4.7,https://example.com/images/shoes.jpg
+4,Smartphone,15999.99,Electronics,15,4.6,https://example.com/images/phone.jpg
+5,LED TV,25999.00,Electronics,8,4.4,https://example.com/images/tv.jpg

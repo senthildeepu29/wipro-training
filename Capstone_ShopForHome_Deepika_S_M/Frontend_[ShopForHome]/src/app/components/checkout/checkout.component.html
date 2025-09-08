@@ -1,0 +1,85 @@
+<div class="container mt-5">
+  <div class="row">
+    <!-- Shipping Address -->
+    <div class="col-md-6">
+      <div class="card shadow-lg p-4">
+        <h3 class="mb-3">Shipping Address</h3>
+
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input [(ngModel)]="fullName" class="form-control" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input [(ngModel)]="email" type="email" class="form-control" placeholder="Enter your email" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Address</label>
+          <textarea [(ngModel)]="address" class="form-control" placeholder="Street, Apartment, etc." rows="3"></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">City</label>
+            <input [(ngModel)]="city" class="form-control" placeholder="Enter city" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Zip Code</label>
+            <input [(ngModel)]="zip" class="form-control" placeholder="Enter zip code" />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Payment Method</label>
+          <select [(ngModel)]="paymentMethod" class="form-select">
+            <option value="cod">Cash on Delivery</option>
+            <option value="card">Credit/Debit Card</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="col-md-6">
+      <div class="card shadow-lg p-4">
+        <h3 class="mb-3">Order Summary</h3>
+        <ul class="list-group mb-3">
+          <li *ngFor="let item of cartItems" class="list-group-item d-flex justify-content-between align-items-center">
+            {{ item.name }} (x{{ item.quantity }})
+            <span>₹{{ item.price * item.quantity }}</span>
+          </li>
+        </ul>
+
+        <h4 class="text-end">Total: <span class="text-success">₹{{ getTotal() }}</span></h4>
+        <div class="coupon-section">
+  <label for="coupon">Coupon Code:</label>
+  <input 
+    type="text" 
+    id="coupon" 
+    [(ngModel)]="couponCode" 
+    placeholder="Enter coupon code" 
+    class="form-control"
+  />
+  <button (click)="applyCoupon()" class="btn btn-info mt-2">Apply Coupon</button>
+</div>
+
+<!-- Show discount applied -->
+<div *ngIf="discount > 0" class="mt-2 text-success">
+  ✅ Coupon applied! {{ discount }}% discount.
+</div>
+
+<!-- Total -->
+<h3 class="mt-3">Total: ₹{{ getTotal() }}</h3>
+
+<!-- Place Order -->
+
+
+        <button (click)="placeOrder()" class="btn btn-success btn-lg w-100 mt-3">
+          🛒 Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

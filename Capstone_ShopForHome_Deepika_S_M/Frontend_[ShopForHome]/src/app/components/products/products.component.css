@@ -1,0 +1,37 @@
+.cart-controls {
+  margin-top: 10px;
+}
+
+button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0d47a1;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  background: #e53935;
+  padding: 6px 12px;
+}
+
+.quantity-controls button:hover {
+  background: #b71c1c;
+}
+
+.quantity-controls span {
+  font-size: 16px;
+  font-weight: bold;
+}

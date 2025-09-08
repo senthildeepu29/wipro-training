@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <h2>Manage Products</h2>
+
+  <!-- Filters -->
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <input [(ngModel)]="searchTerm" (input)="applyFilters()" placeholder="Search products..." class="form-control">
+    </div>
+    <div class="col-md-4">
+      <select [(ngModel)]="filterCategory" (change)="applyFilters()" class="form-select">
+        <option value="">All Categories</option>
+        <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Add Product -->
+  <div class="card p-3 mb-4">
+    <h5>Add New Product</h5>
+    <input [(ngModel)]="newProduct.name" placeholder="Name" class="form-control mb-2">
+    <input [(ngModel)]="newProduct.price" type="price" placeholder="Price" class="form-control mb-2">
+    <input [(ngModel)]="newProduct.rating" type="number" placeholder="Rating" class="form-control mb-2">
+    <input [(ngModel)]="newProduct.imageUrl" placeholder="Image URL" class="form-control mb-2">
+    <input [(ngModel)]="newProduct.category" placeholder="Category" class="form-control mb-2">
+    <input [(ngModel)]="newProduct.stock" type="number" placeholder="Stock" class="form-control mb-2">
+    <button (click)="addProduct()" class="btn btn-success">Add Product</button>
+  </div>
+
+  <!-- Product List -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Category</th>
+        <th>imageUrl</th>
+        <th>stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of filteredProducts">
+        <td *ngIf="editingProduct?.id !== p.id">{{ p.name }}</td>
+        <td *ngIf="editingProduct?.id === p.id"><input [(ngModel)]="editingProduct.name" class="form-control"></td>
+
+        <td *ngIf="editingProduct?.id !== p.id">{{ p.price }}</td>
+        <td *ngIf="editingProduct?.id === p.id"><input [(ngModel)]="editingProduct.price" type="number" class="form-control"></td>
+
+        <td *ngIf="editingProduct?.id !== p.id">{{ p.rating }}</td>
+        <td *ngIf="editingProduct?.id === p.id"><input [(ngModel)]="editingProduct.rating" type="number" class="form-control"></td>
+
+        <td *ngIf="editingProduct?.id !== p.id">{{ p.category }}</td>
+        <td *ngIf="editingProduct?.id === p.id"><input [(ngModel)]="editingProduct.category" class="form-control"></td>
+         
+        <td *ngIf="editingProduct?.id !== p.id">{{ p.imageUrl }}</td>
+        <td *ngIf="editingProduct?.id === p.id"><input [(ngModel)]="editingProduct.imageUrl" class="form-control"></td>
+        <!-- <td *ngIf="p.imageUrl">
+          <img [src]="p.imageUrl" alt="{{ p.name }}" width="50">  
+        </td> -->
+        
+
+
+        <td *ngIf="editingProduct?.id !== p.id">{{ p.stock }}</td>
+        <td *ngIf="editingProduct?.id === p.id"><input [(ngModel)]="editingProduct.stock" type="number" class="form-control"></td>
+
+        <td>
+          <button *ngIf="editingProduct?.id !== p.id" (click)="editProduct(p)" class="btn btn-warning btn-sm">Edit</button>
+          <button *ngIf="editingProduct?.id === p.id" (click)="updateProduct()" class="btn btn-primary btn-sm">Save</button>
+          <button *ngIf="editingProduct?.id === p.id" (click)="cancelEdit()" class="btn btn-secondary btn-sm">Cancel</button>
+          <button (click)="deleteProduct(p.id)" class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

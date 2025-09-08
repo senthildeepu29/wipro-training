@@ -1,0 +1,10 @@
+h2 {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.table {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}

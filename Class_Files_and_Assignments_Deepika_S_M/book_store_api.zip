@@ -1,0 +1,160 @@
+import zipfile
+import os
+
+# Folder to create project files
+project_root = "book_store_api"
+os.makedirs(project_root, exist_ok=True)
+
+# Files and their contents
+files = {
+    "BookStore.csproj": """
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+</Project>
+""",
+    "Program.cs": """
+using Microsoft.EntityFrameworkCore;
+using BookStore.Data;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=bookstore.db"));
+
+var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+    DbSeeder.Seed(db);
+}
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
+""",
+    "README.md": """
+# Book Store API (ASP.NET Core)
+
+RESTful API for managing Books and Authors.
+
+## Endpoints:
+- GET /api/books
+- GET /api/books/{id}
+- POST /api/books
+- PUT /api/books/{id}
+- DELETE /api/books/{id}
+
+- GET /api/authors
+- GET /api/authors/{id}
+- POST /api/authors
+- PUT /api/authors/{id}
+- DELETE /api/authors/{id}
+
+- GET /api/authors/{authorId}/books
+""",
+    "Models/Author.cs": """
+using System.ComponentModel.DataAnnotations;
+namespace BookStore.Models
+{
+    public class Author
+    {
+        public int Id { get; set; }
+        [Required, MaxLength(100)]
+        public string Name { get; set; } = string.Empty;
+        public ICollection<Book>? Books { get; set; }
+    }
+}
+""",
+    "Models/Book.cs": """
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+namespace BookStore.Models
+{
+    public class Book
+    {
+        public int Id { get; set; }
+        [Required, MaxLength(200)]
+        public string Title { get; set; } = string.Empty;
+        public int PublicationYear { get; set; }
+        [ForeignKey(nameof(Author))]
+        public int AuthorId { get; set; }
+        public Author? Author { get; set; }
+    }
+}
+""",
+    "Data/AppDbContext.cs": """
+using Microsoft.EntityFrameworkCore;
+using BookStore.Models;
+namespace BookStore.Data
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+        public DbSet<Author> Authors { get; set; } = null!;
+        public DbSet<Book> Books { get; set; } = null!;
+    }
+}
+""",
+    "Data/DbSeeder.cs": """
+using BookStore.Models;
+namespace BookStore.Data
+{
+    public static class DbSeeder
+    {
+        public static void Seed(AppDbContext db)
+        {
+            if (!db.Authors.Any())
+            {
+                var a1 = new Author { Name = "J.K. Rowling" };
+                var a2 = new Author { Name = "George R.R. Martin" };
+                db.Authors.AddRange(a1, a2);
+                db.SaveChanges();
+                db.Books.AddRange(
+                    new Book { Title = "Harry Potter", PublicationYear = 1997, AuthorId = a1.Id },
+                    new Book { Title = "Game of Thrones", PublicationYear = 1996, AuthorId = a2.Id }
+                );
+                db.SaveChanges();
+            }
+        }
+    }
+}
+""",
+}
+
+# Write all files
+for path, content in files.items():
+    full_path = os.path.join(project_root, path)
+    os.makedirs(os.path.dirname(full_path), exist_ok=True)
+    with open(full_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+# Create zip
+zip_name = "book_store_api.zip"
+with zipfile.ZipFile(zip_name, "w", zipfile.ZIP_DEFLATED) as zf:
+    for folder, _, filenames in os.walk(project_root):
+        for filename in filenames:
+            file_path = os.path.join(folder, filename)
+            zf.write(file_path, os.path.relpath(file_path, project_root))
+
+print(f"{zip_name} created! Extract it and run the project with dotnet run.")
